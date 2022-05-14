@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import logger from 'morgan';
 import connectDb from './connect-db.js';
+// import bodyParser from 'body-parser';
 
 import usersRouter from './routes/users.js';
 import postRouter from './routes/posts.js';
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+// app.use(bodyParser.json());
 
 app.use('/posts', postRouter);
 
